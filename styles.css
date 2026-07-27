@@ -406,7 +406,7 @@ body {
 .metric__unit {
   font-family: var(--sans);
   font-size: 0.55em;
-  color: var(--accent-2);
+  color: var(--muted);
   margin-left: 2px;
   font-weight: 500;
 }
@@ -722,7 +722,24 @@ body {
   font-style: italic;
   letter-spacing: -0.01em;
 }
-.quote__author { border-top: 1px solid var(--border); padding-top: 20px; }
+.quote__author {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.quote__author-info { display: flex; flex-direction: column; }
+.quote__brand {
+  height: 34px;
+  width: auto;
+  opacity: 0.65;
+  filter: grayscale(1) brightness(1.35) contrast(0.85);
+  transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease);
+}
+.quote__brand:hover { opacity: 0.9; filter: grayscale(0.6) brightness(1.15); }
 .quote__name {
   font-weight: 600;
   color: var(--text);
