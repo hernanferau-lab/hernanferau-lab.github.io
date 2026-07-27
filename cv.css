@@ -1,0 +1,224 @@
+/* Shared print stylesheet for CV variants. Optimised for A4, 1-page fit. */
+
+@page {
+  size: A4;
+  margin: 14mm 15mm 12mm 15mm;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 10.4pt;
+  line-height: 1.4;
+  color: #1a1a1f;
+  background: #f2f2f5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Screen preview — mimic A4 page on light bg */
+.page {
+  background: #fff;
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 24px auto;
+  padding: 14mm 15mm 12mm 15mm;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
+}
+
+@media print {
+  body { background: #fff; }
+  .page {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    min-height: auto;
+    max-width: none;
+  }
+  .no-print { display: none !important; }
+}
+
+.no-print {
+  max-width: 210mm;
+  margin: 0 auto 8px;
+  padding: 10px 15mm;
+  background: #eef3ff;
+  border: 1px solid #cddaf5;
+  border-radius: 8px;
+  color: #1e3a8a;
+  font-size: 12.5px;
+}
+.no-print b { color: #0f2560; }
+
+/* Header */
+.cv-header { border-bottom: 2px solid #1a3d8f; padding-bottom: 10px; margin-bottom: 14px; }
+.cv-name  {
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 2px;
+  color: #0f172a;
+}
+.cv-role  {
+  font-size: 10.5pt;
+  color: #1a3d8f;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+.cv-contact {
+  font-size: 9.6pt;
+  color: #475569;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+}
+.cv-contact span::after {
+  content: " ·";
+  color: #94a3b8;
+  margin-left: 4px;
+}
+.cv-contact span:last-child::after { content: ""; margin-left: 0; }
+.cv-rights {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 9pt;
+  font-weight: 600;
+  color: #065f46;
+  background: #d1fae5;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+/* Section headings */
+h2.cv-section {
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #1a3d8f;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 14px 0 6px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #d1d5db;
+}
+
+/* Profile paragraph */
+.cv-profile {
+  margin: 0 0 6px;
+  color: #334155;
+  font-size: 10.2pt;
+  line-height: 1.45;
+}
+
+/* Metrics block */
+.cv-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+.cv-metric {
+  padding: 6px 8px;
+  background: #f1f5ff;
+  border-left: 3px solid #1a3d8f;
+  border-radius: 2px;
+}
+.cv-metric-val {
+  font-size: 12pt;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1;
+}
+.cv-metric-lbl {
+  display: block;
+  margin-top: 3px;
+  font-size: 8.6pt;
+  color: #475569;
+  line-height: 1.25;
+}
+
+/* Skills two-column */
+.cv-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 24px;
+}
+.cv-skills-col h3 {
+  font-size: 9.2pt;
+  font-weight: 700;
+  margin: 4px 0 4px;
+  color: #0f172a;
+}
+.cv-skills-col ul { margin: 0; padding: 0; list-style: none; }
+.cv-skills-col li {
+  font-size: 9.6pt;
+  color: #334155;
+  padding: 1.5px 0;
+}
+.cv-skills-col li::before {
+  content: "•";
+  color: #1a3d8f;
+  margin-right: 6px;
+  font-weight: 700;
+}
+
+/* Experience */
+.cv-role-block {
+  margin-bottom: 8px;
+  page-break-inside: avoid;
+}
+.cv-role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+.cv-role-title {
+  font-size: 10.4pt;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+.cv-role-dates {
+  font-size: 9.2pt;
+  color: #64748b;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.cv-role-org {
+  font-size: 9.6pt;
+  font-style: italic;
+  color: #475569;
+  margin: 0 0 4px;
+}
+.cv-role-block ul { margin: 0 0 4px; padding-left: 16px; }
+.cv-role-block li {
+  font-size: 9.7pt;
+  color: #334155;
+  padding: 1px 0;
+  line-height: 1.4;
+}
+
+/* Education / additional */
+.cv-edu-block { margin-bottom: 6px; }
+.cv-edu-block .cv-role-header { margin-bottom: 1px; }
+.cv-edu-note {
+  font-size: 9.4pt;
+  color: #475569;
+  margin: 1px 0 0;
+}
+
+.cv-additional ul { margin: 0; padding-left: 16px; }
+.cv-additional li {
+  font-size: 9.5pt;
+  color: #334155;
+  padding: 1.5px 0;
+  line-height: 1.4;
+}
+.cv-additional strong { color: #0f172a; }
+
+/* Print link colors */
+a { color: inherit; text-decoration: none; }

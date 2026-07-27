@@ -1,0 +1,14 @@
+# Original / source files that don't need to be published
+Portrait.png
+Business_Analyst_Hernan_Fernandez.pdf
+portrait_optimized.jpg
+*.psd
+*.ai
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
