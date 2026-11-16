@@ -289,11 +289,11 @@
         <article class="project reveal" data-project>
           <div class="project__head">
             <div>
-              <p class="project__tag">Applied AI · RAG Prototype</p>
+              <p class="project__tag">Applied AI · RAG Demo</p>
               <h3 class="project__title">AI-Powered Legal Assistant</h3>
               <p class="project__pitch">
-                Deployed a Retrieval-Augmented Generation prototype that turns a procedural document into an
-                interactive Q&amp;A assistant grounded strictly in its source content.
+                A learning demo of Retrieval-Augmented Generation: one short, simulated procedure turned into a
+                Q&amp;A assistant that answers only from its source and shows where each answer came from.
               </p>
             </div>
             <div class="project__meta">
@@ -342,6 +342,22 @@
               Simulated source content based on the principles of Chile's Ley Karin (Law 21.643). Not a
               replacement for professional advice.
             </p>
+            <div class="project__ops" style="margin-top:24px">
+              <h4>Architecture and demo scope</h4>
+              <p>
+                This is a demo, not a product. It runs on one short simulated document, rebuilds its index on
+                each start and has no evaluation set yet. The diagram shows what it does today and what a
+                reusable version for other organisations would need: configuration per client, PDF and DOCX
+                ingestion with section citations, a persisted index per client, an evaluation set before
+                go-live, and the client's own infrastructure.
+              </p>
+              <figure style="margin:16px 0 0">
+                <a href="assets/rag-architecture.svg" target="_blank" rel="noopener" style="display:block;background:#fff;border-radius:10px;padding:8px;overflow-x:auto">
+                  <img src="assets/rag-architecture.svg" alt="Architecture of the RAG demo and the roadmap to a reusable template" loading="lazy" style="display:block;width:100%;min-width:640px;height:auto">
+                </a>
+                <figcaption style="font-size:14px;opacity:.75;margin-top:8px">RAG demo architecture and roadmap. Open full size.</figcaption>
+              </figure>
+            </div>
           </div>
         </article>
 
